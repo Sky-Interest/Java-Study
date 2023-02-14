@@ -1,0 +1,20 @@
+定义一个Test类，请设计一个方法计算n!(即：1×2×3×...×n)，并在主方法中调用打印n!。（10分）
+要求：
+1)定义一个Test类，类中有两个方法，一个main方法，一个计算n!的方法Fact。
+2)在main方法中调用设计好的方法，传入n的具体值，将Fact方法的返回值打印。
+
+package app;
+
+public class Test {
+    public static void main(String[] args) {
+        int b =  Fact(5);
+        System.out.println(b);
+    }
+    public static int Fact(int n){
+        int sum = 1;
+        for (int i = 1; i <= n; i++) {
+            sum *= i;
+        }
+        return sum;
+    }
+}
