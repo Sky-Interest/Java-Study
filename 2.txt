@@ -1,0 +1,78 @@
+1、定义一个父类动物类Animal类，一个子类Dog类：（10分）
+(1)Animal类具备两个属性，分别是name=”动物”和age=7，同时具备一个方法，是
+shout()
+{  System.out.println(“动物在叫”); }
+(2)Dog类新增属性color=”棕色”和printName( ){ }方法，用于输出子类姓名；
+(3)Dog类覆盖Animal类的name属性为”沙皮狗”，并且重写Animal类的方法shout(){  System.out.println(“汪汪汪”); }
+(4)在main( )方法中创建一个子类对象，并输出如下信息。
+
+package app;
+
+public class Animal {
+    private String name = "动物";
+    public void shout(){
+        System.out.println("动物在叫");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+package app;
+
+public class Dog extends Animal {
+    private String name = "沙皮狗";
+    private String color = "棕色";
+    private String age ;
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public Dog(String age) {
+        this.age = age;
+    }
+
+    public  void printName(){
+        System.out.println("输出子类姓名："+this.name);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void shout(){
+        System.out.println("汪汪汪");
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+}
+
+package app;
+
+public class Maing {
+    public static void main(String[] args) {
+        Dog dog = new Dog("7");
+        System.out.println("名字："+dog.getName()+",年龄："+dog.getAge()+",颜色:"+dog.getColor());
+        dog.shout();
+        dog.printName();
+    }
+}
