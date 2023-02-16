@@ -1,0 +1,22 @@
+3.完成投掷骰子游戏程序：
+程序要求：
+1)制作一个随机数生成程序，模拟投掷骰子。在程序中随机生成一个1－6之间的随机数，与计算机事先生成的随机数比较（模拟两个骰子的比较），比较这两个随机数（即骰子的点数）是否一致。
+2)程序要有完整的显示提示信息.
+package app;
+
+import java.util.Random;
+
+public class Jeep {
+    public static void main(String[] args) {
+        Random r = new Random();
+        int a = r.nextInt(6);
+        System.out.println("计算机生成的数为:"+a);
+        int b = r.nextInt(6);
+        System.out.println("随机生成数为："+b);
+        if (a==b){
+            System.out.println("一样");
+        }else{
+            System.out.println("不一样");
+        }
+    }
+}
