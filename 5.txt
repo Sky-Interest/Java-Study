@@ -1,0 +1,74 @@
+4.实现一个求多个数的最大值的类Calculate，该类能够完成求多个整形数的最大值或者多个浮点数的最大值。（20分）
+要求：该题目使用方法重载实现。输入要输入数值的个数（例如：4），然后根据提示依次输入值，回车确认后得到这些值中的最大值。
+（程序提示：）
+A)在Calculate类中定义两个方法getMax( )并重载它们，它们分别用来处理求多个整数的最大值，和多个浮点数的最大值，并使用数组传参；
+B)输入数据时可以输入整数数列，或者浮点数数列，主类测试时需要分别判断输入；
+package app;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Calculate {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        Calculate.cd();
+        int commd = s.nextInt();
+        switch (commd){
+            case 1:
+            {
+                System.out.println("请输入数组个数：");
+                int n = s.nextInt();
+                int[] arr = new int[n];
+                System.out.println("请分别输入数值:");
+                for (int i = 0; i < arr.length; i++) {
+                    arr[i]=s.nextInt();
+                }
+                System.out.println(Arrays.toString(arr));
+                Calculate.getMax(arr);
+                break;
+            }
+            case 2:
+            {
+                System.out.println("请输入数组个数：");
+                int n = s.nextInt();
+                double[] brr = new double[n];
+                System.out.println("请分别输入数值:");
+                for (int i = 0; i < brr.length; i++) {
+                    brr[i]=s.nextDouble();
+                }
+                System.out.println(Arrays.toString(brr));
+                Calculate.getMax(brr);
+                break;
+            }
+            default:
+                System.out.println("输入有误");
+        }
+
+
+
+    }
+    public static void cd(){
+        System.out.println("1.整数比较  2.浮点数比较");
+    }
+
+    public static void getMax(int[] arr){
+        int max = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i]>max){
+                max = arr[i];
+            }
+        }
+        System.out.println("最大值为："+max);
+    }
+    public static void getMax(double[] arr){
+        double max = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i]>max){
+                max = arr[i];
+            }
+        }
+        System.out.println("最大值为："+max);
+    }
+}
