@@ -1,0 +1,59 @@
+6、计算立体盒子体积。（20分）
+1.问题描述：
+定义一个盒子类Box，指定盒子的长宽高后，输出该盒子的体积。
+2.问题分析：
+盒子的体积为长乘以宽乘以高，所以对于一个盒子来说，长宽高是最基本的三个属性，另外，为了得到体积，我们还需要定义一个体积属性（volumn），该属性的值由盒子类的求体积方法（getVolumn）得到，该方法对长宽高做出乘积，把结果赋值给体积属性。
+3.参考步骤:
+（1)	创建Box类；
+（2)	创建Box类的构造方法，接收长宽高三个参数；
+（3)	定义getVolumn方法，计算体积。
+（4)	创建类对象，调用getVolumn方法，输出体积。
+package app;
+
+public class Box {
+    private int chang;
+    private int kuang;
+    private int gao;
+
+
+
+    public Box(int chang, int kuang, int gao) {
+        this.chang = chang;
+        this.kuang = kuang;
+        this.gao = gao;
+    }
+
+    public int getChang() {
+        return chang;
+    }
+
+    public void setChang(int chang) {
+        this.chang = chang;
+    }
+
+    public int getKuang() {
+        return kuang;
+    }
+
+    public void setKuang(int kuang) {
+        this.kuang = kuang;
+    }
+
+    public int getGao() {
+        return gao;
+    }
+
+    public void setGao(int gao) {
+        this.gao = gao;
+    }
+
+}
+
+package app;
+
+public class Keep {
+    public static void main(String[] args) {
+        Box box = new Box(5,6,7);
+        System.out.println("体积为："+(box.getChang()*box.getGao()*box.getKuang()));
+    }
+}
